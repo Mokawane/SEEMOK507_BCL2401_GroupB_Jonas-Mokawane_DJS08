@@ -5,24 +5,20 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Vans from './pages/Vans';
 import VanDetail from './pages/VanDetail';
+import Layout from './components/Layout'
 import "./server"
 
 export default function App() {
 
   return (
     <BrowserRouter>
-      <header>
-      <Link className="site-logo" to="/">#VanLife</Link>
-        <nav>
-        <Link to="/about">About</Link>
-        <Link to="/vans">Vans</Link>
-        </nav>
-        </header>
       <Routes>
+        <Route element={<Layout />}>
         <Route path="/" element={<Home />}/>
         <Route path="/About" element={<About />}/>
         <Route path="/Vans" element={<Vans />}/>
         <Route path="/Vans/:id" element={<VanDetail />}/>
+        </Route>
       </Routes>
     </BrowserRouter>
   )
