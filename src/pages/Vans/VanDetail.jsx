@@ -10,8 +10,9 @@ export default function VanDetail() {
       .then((res) => res.json())
       .then((data) => setVan(data.vans));
   }, [params.id]);
+  
   return (
-    <div className="van-detail">
+    <div className="van-detail-container">
       {van ? (
         <div className="van-detail">
           <img src={van.imageUrl} />
